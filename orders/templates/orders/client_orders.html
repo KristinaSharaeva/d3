@@ -1,0 +1,28 @@
+<h1>Заказанные товары клиента {{ client.name }}</h1>
+
+<h2>Товары за последние 7 дней</h2>
+<ul>
+    {% for product in products_week %}
+    <li>{{ product.title }} - {{ product.price }} USD</li>
+    {% empty %}
+    <li>Нет товаров за последние 7 дней.</li>
+    {% endfor %}
+</ul>
+
+<h2>Товары за последние 30 дней</h2>
+<ul>
+    {% for product in products_month %}
+    <li>{{ product.title }} - {{ product.price }} USD</li>
+    {% empty %}
+    <li>Нет товаров за последние 30 дней.</li>
+    {% endfor %}
+</ul>
+
+<h2>Товары за последний год</h2>
+<ul>
+    {% for product in products_year %}
+    <li>{{ product.title }} - {{ product.price }} USD</li>
+    {% empty %}
+    <li>Нет товаров за последний год.</li>
+    {% endfor %}
+</ul>
